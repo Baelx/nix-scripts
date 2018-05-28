@@ -1,0 +1,12 @@
+#!/bin/bash
+
+lastused ()
+{
+if [ -z "$1" ] ; then
+find . -maxdepth 1 -type f -printf '%f\n' | sort -k1,1nr | head -1 | xclip -selection clipboard
+elif [ -f "$1" ] ; then
+    echo "Not a directory."
+else
+find "$1" -maxdepth 1 -type f -printf '%f\n' | sort -k1,1nr | head -1 | xclip -selection clipboard
+fi
+}

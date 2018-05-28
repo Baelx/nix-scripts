@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+#Turning off tap and drag with the touchpad
+xinput set-prop 11 275 0
+
+exit

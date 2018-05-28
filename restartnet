@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nmcli dev connect wlp58s0
+
