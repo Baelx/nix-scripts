@@ -4,5 +4,4 @@
 
 for d in /home/* ; do
 	echo "export PS1='\[\033[38;5;13m\][\u@\h \[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]\[\033[38;5;13m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]\\$\[$(tput sgr0)\] '" >> $d/.bash_profile
-	source $d/.bash_profile
 done
