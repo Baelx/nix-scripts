@@ -2,6 +2,6 @@
 # This script copies the last downloaded or modified file in the
 # downloads directory and copies it to the clipboard.
 
-LASTDL="/home/bruh/Downloads/$(ls -rt /home/bruh/Downloads | tail -n1)"
+LASTDL="/home/$USER/Downloads/$(ls -rt /home/$USER/Downloads | tail -n1)"
 
 printf $LASTDL | xclip -selection clipboard
