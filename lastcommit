@@ -1,0 +1,5 @@
+#!/bin/sh
+
+LASTCOMMIT="$(git log --oneline | head -n1 | awk '{print $1}')"
+
+printf $LASTCOMMIT | xclip -selection clipboard
