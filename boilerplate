@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 git clone --depth=1 git@github.com:Baelx/front-end-boilerplate.git .;
 rm -rf .git;

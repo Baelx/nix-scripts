@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This script copies the last downloaded or modified file in the
 # downloads directory and copies it to the clipboard.
 

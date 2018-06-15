@@ -13,4 +13,4 @@
 
 **boilerplate** Git clones my front-end boilerplate repo with depth=1 without creating its own folder, removes git directory, and then git initializes.
 
-The rest are specific to an Elementary OS distro, i.e., tweaking touchpad settings son startup, etc.
+The rest are specific to an Elementary OS distro, i.e., tweaking touchpad settings on startup, etc.

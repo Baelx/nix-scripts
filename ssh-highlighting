@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Adds PS1 color for the root user of a server, microcomputer, or other device that I access for the first time over ssh
 # Run this after you've added your non-root sudo-capable user
 
