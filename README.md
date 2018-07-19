@@ -13,4 +13,6 @@
 
 **boilerplate** Git clones my front-end boilerplate repo with depth=1 without creating its own folder, removes git directory, and then git initializes.
 
+**optimize** Uses imagemagick to compress images without visible loss in quality. Script will create a new directory containing optimized imgs depending on where it's run.
+
 The rest are specific to an Elementary OS distro, i.e., tweaking touchpad settings on startup, etc.

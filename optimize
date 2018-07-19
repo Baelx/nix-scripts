@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir ./optimized-imgs
+
+for photos in *.{png,jpg,jpeg};do convert -verbose $photos -quality 85% -resize 1600x900 ./optimized-imgs/optimized-$photos ; done 
+
