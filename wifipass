@@ -1,0 +1,3 @@
+#!/bin/bash 
+
+sudo cat /etc/NetworkManager/system-connections/$(iwgetid -r) | grep 'psk=' | cut -c5- | tr '\n' '\0' | xclip -selection clipboard
