@@ -1,7 +1,6 @@
 # shell-scripts
 ## My 'nix scripts - the following should be posix-compliant and can be tweaked to apply to many different users. 
 
-### I generally don't like having to use my mouse to copy values in the terminal at all so a couple of these scripts have been written to avoid that.
 
 **purge-screenshots** Activated a few times a week by a cronjob to keep my screenshot directory clean
 
@@ -15,4 +14,4 @@
 
 **optimize** Uses imagemagick to compress images without visible loss in quality. Script will create a new directory containing optimized imgs depending on where it's run.
 
-The rest are specific to an Elementary OS distro, i.e., tweaking touchpad settings on startup, etc.
+**connect** Script that facilitates viewing and starting a wifi connection from the CLI. Allows for tab completion of SSIDs for easy selection.

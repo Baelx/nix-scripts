@@ -1,0 +1,7 @@
+#!/bin/bash
+
+nmcli dev wifi
+
+nmcli dev wifi | awk -F 'Infra' '{print $1}' | cut -c4- | tail -n +2 | tr -d "\n\r"
+
+nmcli --ask dev wifi connect
