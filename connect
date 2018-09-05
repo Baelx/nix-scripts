@@ -1,7 +1,19 @@
 #!/bin/bash
 
-nmcli dev wifi
+_connect() 
+{
+	local cur prev opts
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	opts=$(nmcli dev wifi | awk -F 'Infra' '{print $1}' | cut -c4- | tail -n +2 | tr -d "\n\r")
+	moreopts="-l -w"
 
-nmcli dev wifi | awk -F 'Infra' '{print $1}' | cut -c4- | tail -n +2 | tr -d "\n\r"
+	COMPREPLY=( $(compgen -W "${opts}" ${cur}) )
+	return 0
+}
+complete -F _connect connect
 
-nmcli --ask dev wifi connect
+nmcli --ask dev wifi connect<< SSID
+test-network
+SSID
