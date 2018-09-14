@@ -14,6 +14,6 @@ _connect()
 }
 complete -F _connect connect
 
-nmcli --ask dev wifi connect<< SSID
-test-network
-SSID
+nmcli --ask dev wifi connect<< EOF
+echo "test-network"
+EOF
