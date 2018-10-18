@@ -2,6 +2,49 @@
 # This script copies the last downloaded or modified file in the
 # downloads directory and copies it to the clipboard.
 
-LASTDL="/home/$USER/Downloads/$(ls -rt /home/$USER/Downloads | tail -n1)"
+# A POSIX variable
+OPTIND=1         # Reset in case getopts has been used previously in the shell.
 
-printf $LASTDL | xclip -selection clipboard
+# Initialize our own variables:
+LASTDL="/home/$USER/Downloads/$(ls -rt /home/$USER/Downloads | tail -n1)"
+COPY_FILE="printf $LASTDL | xclip -selection clipboard"
+
+function myHelp () {
+cat <<-END
+
+This script makes working with the most recently downloaded file easier.
+It finds the most recently modified file in the user's Downloads folder(assuming the path is /home/USER/Downloads).
+
+Run with no options, the full file path is printed to STDOUT.
+
+Options:
+------
+   -h | Display this help.
+   -c | Copy the file to the clipboard instead of STDOUT.
+
+END
+}
+
+function copyFile () {
+	printf $LASTDL | xclip -selection clipboard
+}
+
+while getopts "hc" opt; do
+	case "$opt" in
+	h)
+		myHelp
+		exit 0
+		;;
+	c) 
+	        copyFile
+		exit 0
+	;;
+	esac
+done
+
+shift $((OPTIND-1))
+
+[ "${1:-}" = "--" ] && shift
+
+printf $LASTDL
+
