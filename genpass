@@ -1,0 +1,47 @@
+#!/bin/bash
+
+OPTIND=1
+
+function passGen {
+	cat /dev/urandom | env LC_CTYPE=C tr -cd [:$1:] | head -c 15
+}
+
+function helpSection () {
+	cat <<-END
+
+This script generates a password based on your machine's /dev/urandom stream.
+Password is then copied to your x clipboard.
+
+The "-s" option is the default and will be executed if the command is run with no options. 
+
+Options:
+------
+    -h | Display this help.
+    -a | Generate password containing only alphanumerics.
+    -l | Generate password containing only lowercase alphanumerics.
+    -s | Generate password containing alphanumerics and special characters.
+
+END
+}
+
+
+while getopts "asl" opt; do
+	case "$opt" in
+		a) 
+			passGen "alnum" | xclip -selection clipboard
+			exit 0
+			;;
+		s)
+			passGen "print" | xclip -selection clipboard
+			exit 0
+			;;
+		l)
+			passGen "lower" | xclip -selection clipboard
+			exit 0
+			;;
+	esac			
+done
+
+shift $((OPTIND - 1))
+
+passGen "print" | xclip -selection clipboard
