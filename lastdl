@@ -7,7 +7,6 @@ OPTIND=1         # Reset in case getopts has been used previously in the shell.
 
 # Initialize our own variables:
 LASTDL="/home/$USER/Downloads/$(ls -rt /home/$USER/Downloads | tail -n1)"
-COPY_FILE="printf $LASTDL | xclip -selection clipboard"
 
 function helpSection () {
 cat <<-END

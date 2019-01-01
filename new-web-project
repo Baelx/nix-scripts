@@ -1,6 +1,0 @@
-#!/bin/bash
-
-git init
-npm init -y
-npm i -D webpack webpack-cli browser-sync browser-sync-webpack-plugin webpack-dev-server
-echo "" >> wepback.config.js

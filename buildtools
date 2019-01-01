@@ -1,0 +1,40 @@
+#!/bin/bash
+
+OPTIND=1
+
+function helpSection () {
+	cat <<-END
+
+This is the help option. 
+
+Options:
+------
+    -h | Display this help.
+    -l | Generate password containing only lowercase alphanumerics.
+    -s | Server only(with browser-sync)
+
+END
+}
+
+
+while getopts "sl" opt; do
+	case "$opt" in
+		s) 
+			cp ~/code/templates/simple-web-tools/server/package.json .
+			ncu -u
+			npm i
+			exit 0
+			;;
+		s)
+			passGen "print" | xclip -selection clipboard
+			exit 0
+			;;
+		h)
+			helpSection	
+			exit 0
+			;;
+	esac			
+done
+
+shift $((OPTIND - 1))
+
