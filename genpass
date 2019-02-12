@@ -12,22 +12,22 @@ function helpSection () {
 This script generates a password based on your machine's /dev/urandom stream.
 Password is then copied to your x clipboard.
 
-The "-s" option is the default and will be executed if the command is run with no options. 
+The "-s" option is the default and will be executed if the command is run with no options.
 
 Options:
 ------
     -h | Display this help.
     -a | Generate password containing only alphanumerics.
     -l | Generate password containing only lowercase alphanumerics.
-    -s | Generate password containing alphanumerics and special characters.
-
+		-s | Generate password containing alphanumerics and special characters.
+    -p | Generate password containing alphanumerics and special characters and print to screen.
 END
 }
 
 
-while getopts "asl" opt; do
+while getopts "aslp" opt; do
 	case "$opt" in
-		a) 
+		a)
 			passGen "alnum" | xclip -selection clipboard
 			exit 0
 			;;
@@ -39,7 +39,12 @@ while getopts "asl" opt; do
 			passGen "lower" | xclip -selection clipboard
 			exit 0
 			;;
-	esac			
+		p)
+			passGen "print"
+			echo "\n"
+			exit 0
+			;;
+	esac
 done
 
 shift $((OPTIND - 1))
