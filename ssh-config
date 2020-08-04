@@ -1,0 +1,40 @@
+Host do-web
+	HostName 159.89.121.229
+	User bruh
+	Port 50666
+Host helenofjoy
+	HostName 107.180.0.244
+	User helenofjoy
+Host shirleyharvey
+	HostName 146.66.65.93
+	User barelyre
+	Port 18765
+	IdentityFile ~/.ssh/shirleyharvey
+Host opensusey
+	HostName 192.168.0.101
+	User root
+	Port 22
+Host vultr-db
+	HostName 104.238.130.172
+	User bruh
+	Port 50666
+Host do-db
+	HostName 167.99.187.152
+	User bruh
+	Port 50666
+Host pi-hole
+	HostName 192.168.0.105
+	User pi
+	Port 22
+Host work-web
+	HostName 159.203.41.75
+	User alex
+	Port 50666
+Host work-db
+	HostName 178.128.235.205
+	User alex
+	Port 50666
+Host cloud-dns
+	HostName 1.1.1.1
+
+

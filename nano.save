@@ -1,0 +1,9 @@
+map $http_accept_language $lang {
+        default en;
+		~en en;
+        ~fr fr;
+}
+
+...
+
+rewrite (.*) $1/$lang;

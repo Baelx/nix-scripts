@@ -22,7 +22,7 @@ const data = `user=${creds.user}&password=${creds.pass}&cmd=authenticate&cmd=log
 
 const options = {
   hostname: 'captiveportal-login.vpl.ca',
-  port: 443,
+  // port: 443,
   path: '/cgi-bin/login',
   method: 'POST',
   headers
@@ -31,8 +31,8 @@ const options = {
 const req = https.request(options, (res) => {
   console.log(`statusCode: ${res.statusCode}`)
 
-  res.on('data', (d) => {
-    process.stdout.write(d)
+  res.on('data', (data) => {
+    process.stdout.write(data)
   })
 })
 
